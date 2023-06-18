@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "grpc/calculator";
+
+package calculator;
+
+service Calculator {
+  rpc ComputeAverage(stream Number) returns (AverageResponse) {}
+}
+
+message Number {
+  int32 value = 1;
+}
+
+message AverageResponse {
+  float average = 1;
+}
