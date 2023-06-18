@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "grpc/stream";
+
+package stream;
+
+service Stream {
+  rpc StartStreaming(stream StreamMessage) returns (stream StreamMessage) {}
+}
+
+message StreamMessage {
+  string content = 1;
+}
+
+message Empty {}
